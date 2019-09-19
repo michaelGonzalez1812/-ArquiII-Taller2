@@ -25,9 +25,9 @@ int main() {
     fill_array(x, n);
     fill_array(y, n);
 
-    nprocs=2*omp_get_num_procs();
+    nprocs=4*omp_get_num_procs();
 
-    for (int i=1;i <= nprocs;i++){
+    for (int i=1;i <= nprocs; i = i+2){
         omp_set_num_threads(i);
         start_time = omp_get_wtime();
 
